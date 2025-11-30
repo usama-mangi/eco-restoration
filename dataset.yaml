@@ -1,0 +1,10 @@
+
+path: /home/craib/Documents/eco-restoration/datasets/processed
+train: images/train
+val: images/val
+names:
+  0: Rigid Container
+  1: Soft Plastic
+  2: Paper/Cardboard
+  3: Micro-Litter
+  4: Waste Aggregate
