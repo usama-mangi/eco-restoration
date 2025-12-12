@@ -14,14 +14,14 @@ import torch.nn.functional as F
 DEEPLAB_PATH = "deeplab_best.pth"
 CLIPSEG_ID = "CIDAS/clipseg-rd64-refined"
 # MANUAL PATH
-SD_CHECKPOINT_PATH = "sd-v1-5-inpainting,safetensors"
+SD_CHECKPOINT_PATH = "sd-v1-5-inpainting.safetensors"
 ENCODER = "efficientnet-b4" 
 
 DEVICE_SEG = "cuda:0" 
 DEVICE_GEN = "cuda:1"
 
-PROMPTS_SEG = ["trash", "garbage", "rubbish pile", "plastic waste", "litter"]
-PROMPT_INPAINT = "clean ground, dirt, grass, high resolution, 8k, photorealistic, seamless texture"
+PROMPTS_SEG = ["trash", "garbage", "rubbish pile", "plastic waste", "litter", "heaps of trash", ""]
+PROMPT_INPAINT = "high resolution, 8k, realistic image with the segmented parts inpainted with consistent background that makes the overall image consistent and coherent"
 NEGATIVE_PROMPT = "trash, rubbish, pollution, blur, artifacts, low resolution"
 
 def load_models():
@@ -185,5 +185,5 @@ if __name__ == "__main__":
         run_sd_pipeline(target)
     else:
         val_images = glob.glob("datasets/FreeInternetLitterTest/*.jpg")
-        if val_images: run_sd_pipeline(val_images[0])
+        if val_images: run_sd_pipeline(val_images[4])
         else: print("No images found.")

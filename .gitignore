@@ -15,3 +15,5 @@ sam_waste_decoder.pth
 sd-v1-5-inpainting.safetensors
 yolo11n.pt
 yolov8l-seg.pt
+config.bat
+node_modules
